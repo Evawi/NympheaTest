@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nymphea-UI</title>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+<body>
+<div id="page" class="sixteen wide"></div>
+<script>
+    /**/window.UI_settings = {
+        UI:"Semantic",
+        widgets:["Devexpress","Ace"]
+    };
+    window.project_name = "Default Project";
+    window.server_url = "";
+    window.headers = {};
+    var isDEVELOP = true;
+    function loadJSON(callback) {
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'package.json', true);
+        xobj.onreadystatechange = function() {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+                // .open will NOT return a value but simply returns undefined in async mode so use a callback
+                callback(xobj.responseText);
+            }
+        }
+        xobj.send(null);
+    }
+    loadJSON(function(response) {
+        var version = JSON.parse(response).version;
+        var imported = document.createElement('script');
+        imported.src = 'public/nymphea_UI.v_'+version+'.js';
+        document.head.appendChild(imported);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+@import "../../style/guide_line";
+@import "../../style/env";
+
+.nymphea_input,
+.nymphea_input_click_edit{
+
+  &.error{
+
+  }
+  label.nymphea_input__label{
+    &.left{
+      line-height:@input-h;
+      margin-right:@ind-s;
+    }
+    &.top{
+      display:block;
+    }
+  }
+
+  .nymphea_input__field{
+    input[type=text].nymphea_input__element {
+      height: @input-h;
+      border-radius: 0;
+      padding: 0 @ind-m;
+      line-height:@input-h;
+    }
+    &.field{
+      margin:0;
+    }
+  }
+  .nymphea_input__popup_error {
+    position: absolute;
+  }
+
+  &.have_input_label_top{
+    display:block;
+    .nymphea_input__field{
+      display:block;
+    }
+  }
+}
+.nymphea_input_click_edit{
+  .nymphea_input__field{
+    input[type=text].nymphea_input__element {
+      cursor: default;
+      border: none;
+      pointer-events:none;
+    }
+  }
+  .nymphea_input__btn_activated{
+    height: @btn-h;
+    width: @btn-h;
+    &.active{
+      width: @btn-h * 2;
+    }
+    .ok, .cancel{
+      display:inline-block;
+      height: @btn-h;
+      width: @btn-h;
+    }
+
+  }
+  &.editable_active{
+    input[type=text].nymphea_input__element {
+      pointer-events: auto;
+      border: 1px solid rgba(34,36,38,.15);
+    }
+  }
+}

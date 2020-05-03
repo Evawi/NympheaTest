@@ -1,0 +1,22 @@
+@import "../../style/default_style";
+
+.nymphea_tooltip{
+  @height:24px;
+  position: absolute;
+
+  .dx-popup-content{
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    height: @height;
+    line-height: @height;
+    padding: @ind-m 0 ;
+    min-height: @height;
+  }
+  .dx-popover-arrow{
+  }
+  &.template{
+    height: auto;
+  }
+}
