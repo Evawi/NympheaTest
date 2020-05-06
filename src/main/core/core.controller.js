@@ -1,40 +1,16 @@
 'use strict';
-import ModelsMODEL         from '../models/models.model.js';
-import MainMODEL           from './main.model.js';
-//import MainHANDLER   from './main.handler.js';
 
-import ArgsCTRL           from './args/args.controller.js';
-import ObjsCTRL           from './objs/objs.controller.js';
-import ResultCTRL         from './result/result.controller.js';
+import MainVIEW           from './core.component.jsx';
 
-import MainVIEW           from './main.component.jsx';
-import HeaderVIEW         from './header.component.jsx';
-import ModelSelectorVIEW  from './model_selector.component.jsx';
 
-require("./main.less");
-
-class MainCtr extends Nya.CONTROLLER{
+class COREMainCTR extends Nya.CONTROLLER{
     constructor(props){
         super(props);
         let SELF = this;
-        SELF.initModel        = this.initModel.bind(this);
+       /* SELF.initModel        = this.initModel.bind(this);
         SELF.onChangeModel    = this.onChangeModel.bind(this);
         SELF.SEND    = this.SEND.bind(this);
-        SELF.processResult    = this.processResult.bind(this);
-    }
-    __GlobalEvent__CloseTab =()=>{
-        window.onbeforeunload = function() {
-            if(_.isObject(ChartDataMODEL.get())){
-                _.each(ChartDataMODEL.get(),(node,key)=>{ 
-                    if(node){
-                        if(node.stop){
-                                node.stop()
-                        }
-                    }              
-                })  
-            }
-          return null;
-        };
+        SELF.processResult    = this.processResult.bind(this);*/
     }
     init(props){
         let SELF = this;
@@ -83,7 +59,7 @@ class MainCtr extends Nya.CONTROLLER{
             ReactDom.render(
                 React.createElement(MainVIEW,{}),SELF.ViewHandler.target,function(obj){
                     SELF.ViewHandler.getRefs = this.getRefs;
-                    SELF.renderHeader(SELF.ViewHandler.getRefs().header)
+                    //SELF.renderHeader(SELF.ViewHandler.getRefs().header)
                     //SELF.renderModelSelector(SELF.ViewHandler.getRefs().slector_model)
                     //SELF.renderBtnSender(SELF.ViewHandler.getRefs().btn_sender)
                     //SELF.renderBtnstopload(SELF.ViewHandler.getRefs().btn_DEV_stopload)

@@ -1,6 +1,6 @@
 'use strict';
 
-export default class Main_main extends NyaUI.COMPONENT {
+export default class COREMainVIEW extends NyaUI.COMPONENT {
     constructor(props){
         super(props);
     }
