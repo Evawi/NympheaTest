@@ -175,7 +175,7 @@ var DEVconf = [{
         path: path.resolve(__dirname, 'public'),
         filename: '[name].v_'+ver+'.js',
         //publicPath:'/s/dist/public/',
-        publicPath:__dirname+'/public/',
+        publicPath:'./public/',
         library:"[name]",
         libraryTarget: 'umd'
     },
